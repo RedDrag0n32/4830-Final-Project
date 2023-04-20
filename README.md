@@ -1,6 +1,6 @@
 This is our final project!
 
-##Team Roles:
+## Team Roles:
 
 Angular - setting up components, functions in the components, and the html files
 
