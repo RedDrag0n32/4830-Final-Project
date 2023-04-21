@@ -10,6 +10,12 @@ import { BodyWishListComponent } from './body-wish-list/body-wish-list.component
 import { BodyAddBookComponent } from './body-add-book/body-add-book.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+//imported angular material
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
+import {MatDividerModule} from '@angular/material/divider';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +28,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatCardModule,
+    MatButtonModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

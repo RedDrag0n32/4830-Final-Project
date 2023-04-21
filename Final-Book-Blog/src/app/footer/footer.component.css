@@ -1,0 +1,8 @@
+/* work in progress */
+mat-toolbar {
+  flex:auto;
+  position:fixed;
+  left: 0px;
+  bottom: 0px;
+}
+
