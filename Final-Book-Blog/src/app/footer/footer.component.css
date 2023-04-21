@@ -1,8 +1,28 @@
-/* work in progress */
+/* makes the tool bar stay on the bottom of the page*/
 mat-toolbar {
-  flex:auto;
   position:fixed;
   left: 0px;
   bottom: 0px;
 }
+
+/* all below displays names on bottom evenly */
+table {
+  width: 100%;
+}
+
+th {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  width: 33%;
+}
+
+.name1 {
+  border-right: 1px solid;
+}
+
+.name3 {
+  border-left: 1px solid;
+}
+
+
 
