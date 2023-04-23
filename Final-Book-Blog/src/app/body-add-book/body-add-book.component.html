@@ -8,15 +8,15 @@
   <mat-card-title>
     <span>Book Information</span>
   </mat-card-title>
-  <form>
+  <form (submit)="addLibrary(bookForm)" #bookForm = "ngForm">
     <mat-form-field>
-      <input matInput placeholder="Title">
+      <input matInput placeholder="Title" name = "title" ngModel required #title = "ngModel">
     </mat-form-field>
     <mat-form-field>
-      <input matInput placeholder="Author">
+      <input matInput placeholder="Author" name = "author" ngModel required #author = "ngModel">
     </mat-form-field>
     <mat-form-field>
-      <input matInput placeholder="Genre">
+      <input matInput placeholder="Genre" name = "genre" ngModel required #genre = "ngModel">
     </mat-form-field>
     <mat-form-field>
       <mat-checkbox>Series</mat-checkbox>
