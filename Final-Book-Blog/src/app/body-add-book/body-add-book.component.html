@@ -1,26 +1,39 @@
-<!-- Page Header -->
-<mat-toolbar color="accent">
-  <span>Add Book</span>
-</mat-toolbar>
-
 <!-- Form for adding book -->
 <mat-card>
   <mat-card-title>
     <span>Book Information</span>
   </mat-card-title>
-  <form (submit)="addLibrary(bookForm)" #bookForm = "ngForm">
+  <form>
     <mat-form-field>
-      <input matInput placeholder="Title" name = "title" ngModel required #title = "ngModel">
+      <input matInput placeholder="Title">
     </mat-form-field>
+  </p>
+  <p>
     <mat-form-field>
-      <input matInput placeholder="Author" name = "author" ngModel required #author = "ngModel">
+      <input matInput placeholder="Author">
     </mat-form-field>
+  </p>
+  <p>
     <mat-form-field>
-      <input matInput placeholder="Genre" name = "genre" ngModel required #genre = "ngModel">
+      <input matInput placeholder="Genre">
     </mat-form-field>
+  </p>
+  <p>
     <mat-form-field>
       <mat-checkbox>Series</mat-checkbox>
     </mat-form-field>
-  </form>
-</mat-card>
+  </p>
+  <p>
+    <mat-form-field>
+      <label>Notes</label>
+      <textarea></textarea>
+    </mat-form-field>
+  </p>
+</form>
+
+
+
+
+
+
 

@@ -1,7 +1,13 @@
+/* cleaning up how header looks */
 .buttons {
   margin: 2%;
+
 }
 
 .appTitle {
   font-size: larger;
+}
+
+.pageTitle {
+  background-color: #7300e6;
 }

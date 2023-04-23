@@ -7,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
+  //All functions below change the heading when buttons are clicked
+  title = 'Add Book';
+
+  clickAddBookTitle() {
+    this.title = "Add Book"
+  }
+  clickLibraryTitle() {
+    this.title = "Library"
+  }
+  clickWishListTitle() {
+    this.title = "Wish List"
+  }
 }
