@@ -4,8 +4,35 @@
 
 @include mat.core();
 
-$Final-Book-Blog-primary: mat.define-palette(mat.$indigo-palette, 600);
-$Final-Book-Blog-accent: mat.define-palette(mat.$indigo-palette, 400);
+//testing designing custom palettes
+$Final-Book-Blog-purple: (
+  50: #efe5fd,
+  100: #d4bff9,
+  200: #b794f6,
+  300: #9965f4,
+  400: #7e3ff2,
+  500: #6002ee,
+  600: #5300e8,
+  700: #3d00e0,
+  800: #1c00db,
+  900: #0000d6,
+);
+
+$Final-Book-Blog-teal: (
+  50: #E0F2F1,
+  100: #B2DFDB,
+  200: #80CBC4,
+  300: #4DB6AC,
+  400: #26A69A,
+  500: #009688,
+  600: #00897B,
+  700: #00796B,
+  800: #00695C,
+  900: #004D40,
+);
+
+$Final-Book-Blog-primary: mat.define-palette($mat-purple-palette);
+$Final-Book-Blog-accent: mat.define-palette($mat-green-palette);
 $Final-Book-Blog-warn: mat.define-palette(mat.$red-palette);
 
 $Final-Book-Blog-theme: mat.define-light-theme((
