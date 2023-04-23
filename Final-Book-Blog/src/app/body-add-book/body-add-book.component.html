@@ -1,22 +1,22 @@
 <!-- Form for adding book -->
-<form>
+<form (submit)="addLibrary(bookForm)" #bookForm = "ngForm">
   <h3>Book Information</h3>
   <p>
     <mat-form-field>
       <label>Title:</label>
-    <input>
+    <input name = "title" ngModel required #title = "ngModel">
     </mat-form-field>
   </p>
   <p>
     <mat-form-field>
       <label>Author:</label>
-    <input>
+    <input name = "author" ngModel required #author = "ngModel">
     </mat-form-field>
   </p>
   <p>
     <mat-form-field>
       <label>Genre:</label>
-    <input>
+    <input name = "genre" ngModel required #genre = "ngModel">
     </mat-form-field>
   </p>
   <p>
@@ -27,7 +27,7 @@
   <p>
     <mat-form-field>
       <label>Notes</label>
-      <textarea></textarea>
+      <textarea name = "notes" ngModel required #notes = "ngModel"></textarea>
     </mat-form-field>
   </p>
 </form>
