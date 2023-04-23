@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +22,9 @@ import {MatInputModule} from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatDividerModule} from '@angular/material/divider';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatSelectModule} from '@angular/material/select';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +45,10 @@ import {MatDividerModule} from '@angular/material/divider';
     MatCardModule,
     MatCheckboxModule,
     FormsModule,
-    MatDividerModule
+    ReactiveFormsModule,
+    MatDividerModule,
+    MatRadioModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

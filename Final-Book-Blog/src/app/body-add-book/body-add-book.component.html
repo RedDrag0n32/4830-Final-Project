@@ -1,40 +1,55 @@
 <!-- Form for adding book -->
-<form (submit)="addLibrary(bookForm)" #bookForm = "ngForm">
-  <h3>Book Information</h3>
-  <p>
-    <mat-form-field>
-      <label>Title:</label>
-    <input name = "title" ngModel required #title = "ngModel">
-    </mat-form-field>
-  </p>
-  <p>
-    <mat-form-field>
-      <label>Author:</label>
-    <input name = "author" ngModel required #author = "ngModel">
-    </mat-form-field>
-  </p>
-  <p>
-    <mat-form-field>
-      <label>Genre:</label>
-    <input name = "genre" ngModel required #genre = "ngModel">
-    </mat-form-field>
-  </p>
-  <p>
-    <mat-form-field>
-      <mat-checkbox>Series</mat-checkbox>
-    </mat-form-field>
-  </p>
-  <p>
-    <mat-form-field>
-      <label>Notes</label>
-      <textarea name = "notes" ngModel required #notes = "ngModel"></textarea>
-    </mat-form-field>
-  </p>
-</form>
+<div>
+  <form (submit)="addLibrary(bookForm)" #bookForm = "ngForm">
+    <h3>Book Information</h3>
+    <section>
+      <mat-form-field>
+        <label>Title:</label>
+      <input name = "title" ngModel required #title = "ngModel">
+      </mat-form-field>
+    </section>
+    <section>
+      <mat-form-field>
+        <label>Author:</label>
+      <input name = "author" ngModel required #author = "ngModel">
+      </mat-form-field>
+    </section>
+    <section>
+      <mat-form-field>
+        <label>Genre:</label>
+        <mat-select [formControl]="genres" multiple>
+          <mat-option *ngFor="let genre of genreList" [value]="genre">{{genre}}</mat-option>
+        </mat-select>
 
-
-
-
-
-
-
+        <!-- <input name = "genre" ngModel required #genre = "ngModel"> -->
+      </mat-form-field>
+    </section>
+    <section>
+      <mat-form-field>
+        <mat-checkbox>Series</mat-checkbox>
+      </mat-form-field>
+    </section>
+    <section>
+      <mat-form-field>
+        <label>Series Title (Optional):</label>
+        <input>
+      </mat-form-field>
+    </section>
+    <section>
+      <mat-form-field>
+        <label>Reading Status:</label>
+        <mat-radio-group>
+          <mat-radio-button>Unread</mat-radio-button>
+          <mat-radio-button>In Progress</mat-radio-button>
+          <mat-radio-button>Read</mat-radio-button>
+        </mat-radio-group>
+      </mat-form-field>
+    </section>
+    <section>
+      <mat-form-field>
+        <label>Notes</label>
+        <textarea name = "notes" ngModel required #notes = "ngModel"></textarea>
+      </mat-form-field>
+    </section>
+  </form>
+</div>
