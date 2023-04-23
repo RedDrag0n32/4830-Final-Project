@@ -12,7 +12,8 @@ export class BookServiceService {
 
 
     addLibrary(title:string, author:string, genre:string){
-      this.library.push(title, author, genre)
+      const book: Book = {title: title, author: author, genre: genre}
+      this.library.push(book)
     }
 
     getLibrary(){
