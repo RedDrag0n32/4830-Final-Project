@@ -18,27 +18,27 @@
       <mat-form-field>
         <label>Genre:</label>
         <mat-select [formControl]="genres" multiple>
-          <mat-option *ngFor="let genre of genreList" [value]="genre">{{genre}}</mat-option>
+          <mat-option *ngFor="let genre of genreList" [value]="genre" name = "genre" ngModel required #genre = "ngModel">{{genre}}</mat-option>
         </mat-select>
 
         <!-- <input name = "genre" ngModel required #genre = "ngModel"> -->
       </mat-form-field>
     </section>
-    <section>
+    <section class = "test-checkbox">
       <mat-form-field>
-        <mat-checkbox>Series</mat-checkbox>
+        <mat-checkbox class ="test-checkbox" name = "Series" [(ngModel)] = "series">Series</mat-checkbox>
       </mat-form-field>
     </section>
     <section>
       <mat-form-field>
         <label>Series Title (Optional):</label>
-        <input>
+        <input name = "seriesTitle" ngModel required #seriesTitle = "ngModel">
       </mat-form-field>
     </section>
     <section>
       <mat-form-field>
         <label>Reading Status:</label>
-        <mat-radio-group>
+        <mat-radio-group name = "status" ngModel required #status = "ngModel">
           <mat-radio-button>Unread</mat-radio-button>
           <mat-radio-button>In Progress</mat-radio-button>
           <mat-radio-button>Read</mat-radio-button>
