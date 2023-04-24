@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { BookServiceService } from '../book-service.service';
 import { Book } from '../post.model';
 import {FormControl} from '@angular/forms';
+import {MatChipEditedEvent, MatChipInputEvent} from '@angular/material/chips';
 
 @Component({
   selector: 'app-body-add-book',

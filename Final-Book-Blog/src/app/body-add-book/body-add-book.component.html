@@ -1,55 +1,54 @@
 <!-- Form for adding book -->
-<div>
-  <form (submit)="addLibrary(bookForm)" #bookForm = "ngForm">
-    <h3>Book Information</h3>
-    <section>
-      <mat-form-field>
-        <label>Title:</label>
-      <input name = "title" ngModel required #title = "ngModel">
-      </mat-form-field>
-    </section>
-    <section>
-      <mat-form-field>
-        <label>Author:</label>
-      <input name = "author" ngModel required #author = "ngModel">
-      </mat-form-field>
-    </section>
-    <section>
-      <mat-form-field>
-        <label>Genre:</label>
-        <mat-select [formControl]="genres" multiple>
-          <mat-option *ngFor="let genre of genreList" [value]="genre" name = "genre" ngModel required #genre = "ngModel">{{genre}}</mat-option>
-        </mat-select>
+<form (submit)="addLibrary(bookForm)" #bookForm = "ngForm">
+  <h3>Book Information</h3>
 
-        <!-- <input name = "genre" ngModel required #genre = "ngModel"> -->
-      </mat-form-field>
-    </section>
-    <section class = "test-checkbox">
-      <mat-form-field>
-        <mat-checkbox class ="test-checkbox" name = "Series" [(ngModel)] = "series">Series</mat-checkbox>
-      </mat-form-field>
-    </section>
-    <section>
-      <mat-form-field>
-        <label>Series Title (Optional):</label>
-        <input name = "seriesTitle" ngModel required #seriesTitle = "ngModel">
-      </mat-form-field>
-    </section>
-    <section>
-      <mat-form-field>
-        <label>Reading Status:</label>
-        <mat-radio-group name = "status" ngModel required #status = "ngModel">
-          <mat-radio-button>Unread</mat-radio-button>
-          <mat-radio-button>In Progress</mat-radio-button>
-          <mat-radio-button>Read</mat-radio-button>
-        </mat-radio-group>
-      </mat-form-field>
-    </section>
-    <section>
-      <mat-form-field>
-        <label>Notes</label>
-        <textarea name = "notes" ngModel required #notes = "ngModel"></textarea>
-      </mat-form-field>
-    </section>
-  </form>
-</div>
+  <section>
+    <label>Title:</label>
+    <input name = "title" ngModel required #title = "ngModel">
+  </section>
+
+  <section>
+    <label>Author:</label>
+    <input name = "author" ngModel required #author = "ngModel">
+  </section>
+
+  <section>
+    <label>Genre(s):</label>
+    <!-- drop down selection -->
+    <mat-select [formControl]="genres" multiple selectable>
+
+      <mat-select-trigger>
+        <!-- displays selections as chips -->
+        <mat-chip-set color="primary">
+          <mat-chip *ngFor="let genre of genres.value">
+            {{genre}}
+          </mat-chip>
+        </mat-chip-set>
+      </mat-select-trigger>
+
+      <mat-option *ngFor="let genre of genreList" [value]="genre">{{genre}}</mat-option>
+
+    </mat-select>
+  </section>
+
+  <section>
+    <mat-checkbox>Series</mat-checkbox>
+  </section>
+  <section>
+    <label>Series Title (Optional):</label>
+    <input>
+  </section>
+  <section>
+    <label>Reading Status:</label>
+    <mat-radio-group>
+      <mat-radio-button>Unread</mat-radio-button>
+      <mat-radio-button>In Progress</mat-radio-button>
+      <mat-radio-button>Read</mat-radio-button>
+    </mat-radio-group>
+  </section>
+
+  <section>
+    <label>Notes</label>
+    <textarea name = "notes" ngModel required #notes = "ngModel"></textarea>
+  </section>
+</form>
