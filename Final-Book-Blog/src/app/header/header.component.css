@@ -1,13 +1,18 @@
-/* cleaning up how header looks */
 .buttons {
-  margin: 2%;
-
+  margin: 5%;
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .appTitle {
   font-size: larger;
 }
 
+.topBar {
+  background-color: #404041;
+}
+
 .pageTitle {
-  background-color: #7300e6;
+  background-color: #8314da;
 }

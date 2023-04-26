@@ -1,5 +1,5 @@
-<mat-toolbar color="primary">
-  <mat-toolbar-row>
+<mat-toolbar>
+  <mat-toolbar-row class="topBar">
     <!-- App Title, subject to change, divs are to help with css -->
   <div class="appTitle">
     <span>Our Book App</span>
@@ -7,9 +7,9 @@
 
   <!-- Nav Buttons, <button> will change to <a> possibly when we implement routing -->
     <div class="buttons">
-      <a (click)="clickAddBookTitle()" style="text-decoration: none;" routerLink="/" routerLinkActive="active" mat-flat-button color="primary">Add Book</a>
-      <a (click)="clickLibraryTitle()" style="text-decoration: none;" routerLink="/library" routerLinkActive="active" mat-flat-button color="primary">Library</a>
-      <a (click)="clickWishListTitle()" style="text-decoration: none;" routerLink="/wish-list" routerLinkActive="active" mat-flat-button color="primary">Wish List</a>
+      <a (click)="clickAddBookTitle()" style="text-decoration: none;" routerLink="/" routerLinkActive="active" mat-flat-button>Add Book</a>
+      <a (click)="clickLibraryTitle()" style="text-decoration: none;" routerLink="/library" routerLinkActive="active" mat-flat-button>Library</a>
+      <a (click)="clickWishListTitle()" style="text-decoration: none;" routerLink="/wish-list" routerLinkActive="active" mat-flat-button>Wish List</a>
     </div>
   </mat-toolbar-row>
   <mat-toolbar-row class="pageTitle">
