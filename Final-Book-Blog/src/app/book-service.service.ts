@@ -1,28 +1,35 @@
 import { Injectable } from '@angular/core';
-import { Book } from './post.model';
+import { Book } from './book.model';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BookServiceService {
 
-  constructor() { }
-    public library: Book[]
-    wishList = []
+  constructor(private http: HttpClient) { }
+
+  private library: Book[] = []
+  wishList = []
 
 
-    addLibrary(title:string, author:string, genre:string){
-      // const book: Book = {title: title, author: author, genre: genre}
-      // this.library.push(book)
-    }
+  addLibrary(title:string, author:string, genre:string){
+    // const book: Book = {title: title, author: author, genre: genre}
+    // this.library.push(book)
+  }
 
     getLibrary(){
+      this.http.get<{message: string, library: Book[]}>('http://localhost:3000/api/library').
+      subscribe((libraryData)=>{
+        this.library = libraryData.library;
+      });
       return this.library
     }
 
 
-    addWishList(){
-
+    addWishList(title: string, author: string){
+      const book: Book = {id:null, title: title, author: author}
+      this.library.push(book);
     }
 
     getWishList(){

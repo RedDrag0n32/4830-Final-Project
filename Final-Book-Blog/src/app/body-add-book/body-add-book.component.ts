@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { BookServiceService } from '../book-service.service';
-import { Book } from '../post.model';
+import { Book } from '../book.model';
 import {FormControl} from '@angular/forms';
 import {MatChipEditedEvent, MatChipInputEvent} from '@angular/material/chips';
 

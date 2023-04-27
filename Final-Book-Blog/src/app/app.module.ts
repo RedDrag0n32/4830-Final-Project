@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from "@angular/common/http"
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -52,6 +53,7 @@ import {MatChipsModule} from '@angular/material/chips';
     MatRadioModule,
     MatSelectModule,
     MatChipsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
