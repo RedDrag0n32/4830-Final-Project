@@ -49,7 +49,7 @@ app.post("/api/library",(req,res,next)=>{
   })
 });
 
-app.get("/api/library",(reg,res,next)=>{
+app.get("/api/library",(req,res,next)=>{
   BookModel.find().then(documents => {
     res.status(201).json({
       message:'Book retrieval successful',
