@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Book } from './book.model';
 import { HttpClient } from '@angular/common/http';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,8 @@ export class BookServiceService {
 
   constructor(private http: HttpClient) { }
 
-  public library: Book[] = []
+  private library: Book[] = []
+  private libraryUpDate = new Subject<Book[]>()
   wishList = []
 
 

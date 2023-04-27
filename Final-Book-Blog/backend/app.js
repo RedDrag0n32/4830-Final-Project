@@ -31,8 +31,12 @@ app.use((req, res, next)=>{
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:false}))
 
-app.get('/', (req, res, next) =>{
-  res.send('Hello from express') // shows server is connected on its port
+// app.get('/', (req, res, next) =>{
+//   res.send('Hello from express') // shows server is connected on its port
+// })
+
+app.use((req, res, next)=>{
+  next();
 })
 
 // accept info from user and send to database
@@ -42,36 +46,36 @@ app.post("/api/library",(req,res,next)=>{
     title: req.body.title,
     author: req.body.author
   })
-  book.save()
-  console.log(book)
+  book.save().then(createBook=>{
   res.status(201).json({
     message:'Book added successful'
-  })
-});
+  });
+})
+})
 
 app.get("/api/library",(reg,res,next)=>{
   BookModel.find().then(documents => {
-    res.status(201).json({
+    res.status(200).json({
       message:'Book retrieval successful',
       books: documents
-    })
-  })
+    });
+  });
 });
 
-app.use('/api/library',(req,res,next)=>{
-  const library = [
-    {
-      id: "6546654",
-      title:"1. First Title",
-      author:"This is the first author"
-    }
-  ]
+// app.use('/api/library',(req,res,next)=>{
+//   const library = [
+//     {
+//       id: "6546654",
+//       title:"1. First Title",
+//       author:"This is the first author"
+//     }
+//   ]
 
-  res.status(200).json({
-    message:"This is fetched data",
-    library: library
-  });
-})
+//   res.status(200).json({
+//     message:"This is fetched data",
+//     library: library
+//   });
+// })
 
 // app.post("/api/library",(req,res,next)=>{
 //   const book = new BookModel({
