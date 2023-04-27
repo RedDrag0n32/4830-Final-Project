@@ -1,5 +1,5 @@
 /* makes the tool bar stay on the bottom of the page*/
-mat-toolbar {
+.toolbar {
   position:fixed;
   left: 0px;
   bottom: 0px;
@@ -15,6 +15,7 @@ th {
   font-family: Arial, Helvetica, sans-serif;
   font-size: larger;
   text-align: center;
+  font-weight: 300;
   width: 33%;
 }
 

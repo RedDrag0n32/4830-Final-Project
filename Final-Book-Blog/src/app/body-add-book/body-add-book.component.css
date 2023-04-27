@@ -9,7 +9,7 @@ form {
   justify-content: space-between;
 }
 
-/* .spacing {
+/* .formSection {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -20,34 +20,21 @@ h3 {
   margin-top: 2%;
   width: 50%;
   padding: 10px;
-  background-color: #8314da;
+  background-color: #9c27b0;
   text-align: center;
   color: white;
   font-size: large;
   font-weight: 500;
 }
 
-div {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.formButtons {
+input {
   margin: auto;
-  margin-bottom: 5%;
-  width: 75%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  width: 99%;
 }
 
 button {
-  display: inline-block;
+  margin: auto;
   width: 200px;
-  height: 50px;
-  background-color: #8314da;
-  color: white;
   font-size: large;
   font-weight: 500;
 }

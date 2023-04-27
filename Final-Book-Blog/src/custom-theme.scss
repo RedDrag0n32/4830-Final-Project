@@ -4,8 +4,8 @@
 
 @include mat.core();
 
-$Final-Book-Blog-primary: mat.define-palette(mat.$purple-palette, 500, 200, 700);
-$Final-Book-Blog-accent: mat.define-palette(mat.$teal-palette, 200);
+$Final-Book-Blog-primary: mat.define-palette(mat.$purple-palette);
+$Final-Book-Blog-accent: mat.define-palette(mat.$cyan-palette);
 $Final-Book-Blog-warn: mat.define-palette(mat.$red-palette);
 
 $Final-Book-Blog-theme: mat.define-light-theme((

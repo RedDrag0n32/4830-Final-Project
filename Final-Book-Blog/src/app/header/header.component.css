@@ -5,8 +5,14 @@
   justify-content: space-between;
 }
 
+/* .buttons a {
+  background-color: #404041;
+  color: white;
+} */
+
 .appTitle {
   font-size: larger;
+  font-weight: 500;
 }
 
 .topBar {
@@ -14,5 +20,6 @@
 }
 
 .pageTitle {
-  background-color: #8314da;
+  font-size: larger;
+  font-weight: 500;
 }
