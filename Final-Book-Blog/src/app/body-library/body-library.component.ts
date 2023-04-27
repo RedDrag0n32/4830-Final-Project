@@ -10,11 +10,12 @@ import { Book } from '../book.model';
 })
 export class BodyLibraryComponent {
 
-  public library: Book[]
-
+  public library: Book[] = []
   constructor(public service: BookServiceService){
 
   }
+
+
 
   ngOnInit(){
     this.library = this.service.getLibrary()

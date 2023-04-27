@@ -26,6 +26,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSelectModule} from '@angular/material/select';
 import {MatChipsModule} from '@angular/material/chips';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 
 @NgModule({
@@ -53,7 +54,8 @@ import {MatChipsModule} from '@angular/material/chips';
     MatRadioModule,
     MatSelectModule,
     MatChipsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

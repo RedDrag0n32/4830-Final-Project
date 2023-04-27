@@ -9,7 +9,7 @@ export class BookServiceService {
 
   constructor(private http: HttpClient) { }
 
-  private library: Book[] = []
+  public library: Book[] = []
   wishList = []
 
 
@@ -23,9 +23,9 @@ export class BookServiceService {
   }
 
   getLibrary(){ // creates connection to app.js
-    this.http.get<{message: string, library: Book[]}>('http://localhost:3000/api/library').
+    this.http.get<{message: string, books: Book[]}>('http://localhost:3000/api/library').
     subscribe((libraryData)=>{
-      this.library = libraryData.library;
+      this.library = libraryData.books;
     });
     return this.library
   }
