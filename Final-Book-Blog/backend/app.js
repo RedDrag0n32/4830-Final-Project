@@ -49,6 +49,15 @@ app.post("/api/library",(req,res,next)=>{
   })
 });
 
+app.get("/api/library",(reg,res,next)=>{
+  BookModel.find().then(documents => {
+    res.status(201).json({
+      message:'Book retrieval successful',
+      books: documents
+    })
+  })
+});
+
 app.use('/api/library',(req,res,next)=>{
   const library = [
     {
@@ -64,16 +73,16 @@ app.use('/api/library',(req,res,next)=>{
   });
 })
 
-app.post("/api/library",(req,res,next)=>{
-  const book = new BookModel({
-    title: req.body.title,
-    author: req.body.author
-  })
-  console.log(book)
-  res.status(201).json({
-    message:'Book added successful'
-  });
-})
+// app.post("/api/library",(req,res,next)=>{
+//   const book = new BookModel({
+//     title: req.body.title,
+//     author: req.body.author
+//   })
+//   console.log(book)
+//   res.status(201).json({
+//     message:'Book added successful'
+//   });
+// })
 
 
 module.exports = app

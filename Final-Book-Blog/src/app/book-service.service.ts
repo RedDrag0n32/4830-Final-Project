@@ -13,7 +13,7 @@ export class BookServiceService {
   wishList = []
 
 
-  addLibrary(title:string, author:string){
+  AddLibrary(title:string, author:string){//adds book to database
     console.log("addLibrary(): " + title + " " + author)
     const book: Book = {id: null, title: title, author: author}
     this.http.post<{title:string, author:string}>('http://localhost:3000/api/library',book).

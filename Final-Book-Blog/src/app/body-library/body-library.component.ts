@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { BookServiceService } from '../book-service.service';
+import { Book } from '../book.model';
 
 @Component({
   selector: 'app-body-library',
@@ -9,4 +10,13 @@ import { BookServiceService } from '../book-service.service';
 })
 export class BodyLibraryComponent {
 
+  public library: Book[]
+
+  constructor(public service: BookServiceService){
+
+  }
+
+  ngOnInit(){
+    this.library = this.service.getLibrary()
+  }
 }
