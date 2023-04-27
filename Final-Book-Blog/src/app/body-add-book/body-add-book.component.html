@@ -1,6 +1,6 @@
 <!-- Form for adding book -->
 <h3>Enter your Book Information</h3>
-<form (submit)="addLibrary(bookForm)" #bookForm = "ngForm">
+<form (submit)="onAddLibrary(bookForm)" #bookForm = "ngForm">
   <!-- <div class="spacing"> -->
     <div class="enterTitle">
       <label>Title:</label>
@@ -52,7 +52,7 @@
     </div>
 
     <div class="formButtons">
-      <button>Add to Library</button>
+      <button type = "submit">Add to Library</button>
       <button>Add to Wish List</button>
     </div>
   <!-- </div> -->

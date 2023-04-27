@@ -5,7 +5,7 @@ export interface Book
   author:string
   // genre:string
   // series: boolean
-  // sertiesTitle: string
+  // seriesTitle: string
   // tag: string
   // status: string
 

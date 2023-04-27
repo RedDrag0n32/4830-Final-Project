@@ -13,26 +13,25 @@ export class BookServiceService {
   wishList = []
 
 
-  addLibrary(title:string, author:string, genre:string){
+  AddLibrary(title:string, author:string){
     // const book: Book = {title: title, author: author, genre: genre}
     // this.library.push(book)
   }
 
-    getLibrary(){
-      this.http.get<{message: string, library: Book[]}>('http://localhost:3000/api/library').
-      subscribe((libraryData)=>{
-        this.library = libraryData.library;
-      });
-      return this.library
-    }
+  getLibrary(){ // creates connection to app.js
+    this.http.get<{message: string, library: Book[]}>('http://localhost:3000/api/library').
+    subscribe((libraryData)=>{
+      this.library = libraryData.library;
+    });
+    return this.library
+  }
 
+  addWishList(title: string, author: string){
+    const book: Book = {id:null, title: title, author: author}
+    this.library.push(book);
+  }
 
-    addWishList(title: string, author: string){
-      const book: Book = {id:null, title: title, author: author}
-      this.library.push(book);
-    }
-
-    getWishList(){
-      return this.wishList
-    }
+  getWishList(){
+    return this.wishList
+  }
 }

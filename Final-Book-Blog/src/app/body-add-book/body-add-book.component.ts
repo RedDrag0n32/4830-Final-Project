@@ -52,9 +52,8 @@ export class BodyAddBookComponent {
 
   //public book: Book[]
 
-   addLibrary(form: NgForm){
-    //this.service.addLibrary(form.value.title, form.value.author, form.value.genre)
-    this.series = form.value.series
+   onAddLibrary(form: NgForm){
+    this.service.AddLibrary(form.value.title, form.value.author)
     form.resetForm()
    }
 
