@@ -1,4 +1,4 @@
-// http is set up on server.js. can have multiple requests coming from http
+//http is set up on server.js. can have multiple requests coming from http
 const app = require("./backend/app");
 const debug = require("debug")("node-angular");
 const http = require("http");
@@ -51,3 +51,4 @@ const server = http.createServer(app);
 server.on("error", onError);
 server.on("listening", onListening);
 server.listen(port);
+console.log("server running at ", port)
