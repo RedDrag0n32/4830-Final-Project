@@ -4,7 +4,7 @@ const port = 3000
 const BookModel = require('./models/book') // db schema
 const mongoose = require('mongoose')
 
-mongoose.connect("mongodb+srv://tlkcv2:Tk190488@redcluster.wsdqz5e.mongodb.net/test")
+mongoose.connect("mongodb+srv://tlkcv2:Tk190488@redcluster.wsdqz5e.mongodb.net/test?retryWrites=true&w=majority")
 .then(()=>{
     console.log("Connected to database")
 })
@@ -35,6 +35,7 @@ app.get('/', (req, res, next) =>{
   res.send('Hello from express') // shows server is connected on its port
 })
 
+// accept info from user and send to database
 app.post("/api/library",(req,res,next)=>{
   //const book = req.body;
   const book = new BookModel({
