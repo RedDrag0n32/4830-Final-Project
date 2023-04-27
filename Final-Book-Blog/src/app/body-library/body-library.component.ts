@@ -8,7 +8,7 @@ import { Book } from '../book.model';
   templateUrl: './body-library.component.html',
   styleUrls: ['./body-library.component.css']
 })
-export class BodyLibraryComponent {
+export class BodyLibraryComponent implements OnInit {
 
   public library: Book[] = []
   constructor(public service: BookServiceService){
