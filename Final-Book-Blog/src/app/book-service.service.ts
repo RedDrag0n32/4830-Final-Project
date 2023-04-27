@@ -13,9 +13,13 @@ export class BookServiceService {
   wishList = []
 
 
-  AddLibrary(title:string, author:string){
-    // const book: Book = {title: title, author: author, genre: genre}
-    // this.library.push(book)
+  addLibrary(title:string, author:string){
+    console.log("addLibrary(): " + title + " " + author)
+    const book: Book = {id: null, title: title, author: author}
+    this.http.post<{title:string, author:string}>('http://localhost:3000/api/library',book).
+    subscribe((libraryData)=>{
+      this.library.push(book)
+    });
   }
 
   getLibrary(){ // creates connection to app.js
@@ -27,7 +31,7 @@ export class BookServiceService {
   }
 
   addWishList(title: string, author: string){
-    const book: Book = {id:null, title: title, author: author}
+    const book: Book = {id: null, title: title, author: author}
     this.library.push(book);
   }
 
