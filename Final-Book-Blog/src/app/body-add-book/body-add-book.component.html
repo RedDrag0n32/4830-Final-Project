@@ -19,7 +19,7 @@
         <mat-select-trigger>
           <!-- displays selections as chips -->
           <mat-chip-set>
-            <mat-chip selected color="primary" *ngFor="let genre of genres.value" class="displayChips">
+            <mat-chip highlighted="primary" *ngFor="let genre of genres.value" class="displayChips">
               {{genre}}
             </mat-chip>
           </mat-chip-set>
@@ -28,7 +28,7 @@
       </mat-select>
     </div>
 
-    <div class="checkSeries">
+    <div class="checkSeries" id="check">
       <mat-checkbox>Series</mat-checkbox>
     </div>
 

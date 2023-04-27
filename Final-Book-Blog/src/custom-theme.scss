@@ -1,22 +1,20 @@
-//Custom theme may require complete rework
+// Custom theme may require complete rework
 
-// @use '@angular/material' as mat;
+@use '@angular/material' as mat;
 
-// @import '@angular/material/theming';
+@include mat.core();
 
-// @include mat.core();
+$Final-Book-Blog-primary: mat.define-palette(mat.$purple-palette, 500, 200, 700);
+$Final-Book-Blog-accent: mat.define-palette(mat.$teal-palette, 200);
+$Final-Book-Blog-warn: mat.define-palette(mat.$red-palette);
 
-// $Final-Book-Blog-primary: mat.define-palette($mat-purple-palette, 500, 200, 700);
-// $Final-Book-Blog-accent: mat.define-palette($mat-teal-palette, 200);
-// $Final-Book-Blog-warn: mat.define-palette(mat.$red-palette);
+$Final-Book-Blog-theme: mat.define-light-theme((
 
-// $Final-Book-Blog-theme: mat.define-light-theme((
-//   color: (
-//     primary: $Final-Book-Blog-primary,
-//     accent: $Final-Book-Blog-accent,
-//     warn: $Final-Book-Blog-warn,
-//   )
-// ));
+  color: (
+    primary: $Final-Book-Blog-primary,
+    accent: $Final-Book-Blog-accent,
+    warn: $Final-Book-Blog-warn,
+  )
+));
 
-// @include mat.all-component-themes($Final-Book-Blog-theme);
 
