@@ -1,4 +1,4 @@
-# Reference: This file was taken from Chris Scully's code for the guest Docker lecture.
+# Reference: This file and the Procfile in this directory were taken from Chris Scully's code for the guest Docker lecture.
 
 FROM node:19
 
