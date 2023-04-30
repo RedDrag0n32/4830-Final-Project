@@ -44,7 +44,13 @@ app.post("/api/library",(req,res,next)=>{
   //const book = req.body;
   const book = new BookModel({
     title: req.body.title,
-    author: req.body.author
+    author: req.body.author,
+    genre: req.body.genre,
+    series: req.body.series,
+    seriesTitle: req.body.seriesTitle,
+    status: req.body.status,
+    notes: req.body.notes,
+    tag: req.body.tag
   })
   book.save().then(createBook=>{
   res.status(201).json({
