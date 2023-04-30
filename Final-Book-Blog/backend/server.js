@@ -1,5 +1,5 @@
 //http is set up on server.js. can have multiple requests coming from http
-const app = require("./backend/app");
+const app = require("./app");
 const debug = require("debug")("node-angular");
 const http = require("http");
 

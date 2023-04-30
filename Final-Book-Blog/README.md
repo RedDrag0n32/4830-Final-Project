@@ -1,5 +1,21 @@
 # FinalBookBlog
 
+# Running the app
+## Locally without Docker:
+
+In one terminal:
+
+Navigate to `backend` folder and run `node server.js` to start the backend server.
+
+In another terminal:
+
+Navigate to `frontend` folder and run `ng serve` to start Angular.
+
+Go to `localhost:4200` in your browser to access the website.
+# Reference(s):
+Changing where Angular generated files go. "how to change the dist-folder path in angular-cli after 'ng build'" - Stack Overflow
+[https://stackoverflow.com/questions/37348045/how-to-change-the-dist-folder-path-in-angular-cli-after-ng-build](https://stackoverflow.com/questions/37348045/how-to-change-the-dist-folder-path-in-angular-cli-after-ng-build)how to change the dist-folder path in angular-cli after 'ng build'
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.1.
 
 ## Development server
