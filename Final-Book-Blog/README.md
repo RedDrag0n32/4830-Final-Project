@@ -1,7 +1,7 @@
 # FinalBookBlog
 
 # Running the app
-## Locally without Docker:
+## Locally (without Docker):
 
 In one terminal:
 
@@ -12,7 +12,21 @@ In another terminal:
 Navigate to `frontend` folder and run `ng serve` to start Angular.
 
 Go to `localhost:4200` in your browser to access the website.
+
+## Locally with Docker:
+You need to have Docker installed.
+
+If you have `node_modules` in the `frontend` folder, for some reason the Docker build may not work.
+
+Run `docker compose build` and wait for Docker to finish building the three containers.
+
+Run `docker compose up` to start the containers.
+
+Go to `localhost:4200` in your browser to access the website.
+
 # Reference(s):
+Chris Scully's Docker lecture, slides, and the example MeanStack code.
+
 Changing where Angular generated files go. "how to change the dist-folder path in angular-cli after 'ng build'" - Stack Overflow
 [https://stackoverflow.com/questions/37348045/how-to-change-the-dist-folder-path-in-angular-cli-after-ng-build](https://stackoverflow.com/questions/37348045/how-to-change-the-dist-folder-path-in-angular-cli-after-ng-build)how to change the dist-folder path in angular-cli after 'ng build'
 
