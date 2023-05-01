@@ -1,0 +1,8 @@
+# Reference:
+# "Dockerizing a Node.js web app" - Node.js
+# https://nodejs.org/en/docs/guides/nodejs-docker-webapp#dockerignore-file
+# "Add .dockerignore file for node_modules #46" - GitHub issue
+# https://github.com/docker/getting-started/issues/46
+
+node_modules
+npm-debug.log
