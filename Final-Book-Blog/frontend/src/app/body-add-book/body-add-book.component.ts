@@ -46,14 +46,23 @@ export class BodyAddBookComponent {
     "True Crime",
     "Young Adult"
   ];
-
-  //This is to see if the series check box is clicked
-  series = true
+   genreSelect: string[] = []
 
   //public book: Book[]
 
    onAddLibrary(form: NgForm){
-    this.service.AddLibrary(form.value.title, form.value.author)
+    console.log(this.genres.value)
+    this.genreSelect.push(form.value.genre)
+    this.service.AddLibrary(
+      form.value.title,
+      form.value.author,
+      this.genreSelect,
+      form.value.series,
+      form.value.seriesTitle,
+      form.value.status,
+      form.value.notes,
+      form.value.tag
+      )
     form.resetForm()
    }
 

@@ -19,7 +19,7 @@
 
           <!-- displays selections as chips -->
           <mat-chip-set>
-            <mat-chip highlighted="primary" *ngFor="let genre of genres.value" class="displayChips">
+            <mat-chip highlighted="primary" *ngFor="let genre of genres.value" class="displayChips" name="genre">
               {{genre}}
             </mat-chip>
           </mat-chip-set>
@@ -30,19 +30,19 @@
     </label>
 
     <div class="formSection" id="checkSeries">
-      <mat-checkbox color="accent">Series</mat-checkbox>
+      <mat-checkbox color="accent" name = "series" ngModel required #series = "ngModel">Series</mat-checkbox>
     </div>
 
     <label class="formSection" id="seriesTitle">
-      Series Title (Optional): <input>
+      Series Title (Optional): <input name = "seriesTitle" ngModel required #seriesTitle = "ngModel">
     </label>
 
     <label class="formSection" id="radioStatus">
       Reading Status:
-      <mat-radio-group>
-        <mat-radio-button>Unread</mat-radio-button>
-        <mat-radio-button>In Progress</mat-radio-button>
-        <mat-radio-button>Read</mat-radio-button>
+      <mat-radio-group name = "status" ngModel required #status = "ngModel">
+        <mat-radio-button value="Unread">Unread</mat-radio-button>
+        <mat-radio-button value="InProgress">In Progress</mat-radio-button>
+        <mat-radio-button value="Read">Read</mat-radio-button>
       </mat-radio-group>
     </label>
 
@@ -53,9 +53,9 @@
 
     <label class="formSection" id="radioWhichPage">
       Add to:
-      <mat-radio-group>
-        <mat-radio-button>Library</mat-radio-button>
-        <mat-radio-button>Wish List</mat-radio-button>
+      <mat-radio-group name = "tag" ngModel required #tag = "ngModel">
+        <mat-radio-button value = "Library">Library</mat-radio-button>
+        <mat-radio-button value = "WishList">Wish List</mat-radio-button>
       </mat-radio-group>
     </label>
 

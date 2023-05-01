@@ -16,9 +16,16 @@ export class BookServiceService {
   wishList = []
 
 
-  AddLibrary(title:string, author:string){//adds book to database
-    console.log("addLibrary(): " + title + " " + author)
-    const book: Book = {id: null, title: title, author: author}
+  AddLibrary(title:string, author:string, genre: string[], series: Boolean, seriesTitle:string, status: string, notes: string, tag: string){//adds book to database
+    console.log("addLibrary(): " + title + " " + author + " " + genre[0])
+    const book: Book = {id: null, title: title, author: author,
+    genre: genre,
+    series: series,
+    seriesTitle: seriesTitle,
+    status: status,
+    notes: notes,
+    tag: tag
+  }
     this.http.post<{title:string, author:string}>('http://localhost:3000/api/library',book).
     subscribe((libraryData)=>{
       this.library.push(book)
@@ -39,10 +46,10 @@ export class BookServiceService {
     return this.libraryUpDate.asObservable();
   }
 
-  addWishList(title: string, author: string){
-    const book: Book = {id: null, title: title, author: author}
-    this.library.push(book);
-  }
+  // addWishList(title: string, author: string){
+  //   const book: Book = {id: null, title: title, author: author}
+  //   this.library.push(book);
+  // }
 
   getWishList(){
     return this.wishList

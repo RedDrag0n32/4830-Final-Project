@@ -7,8 +7,9 @@
        </p>
      </mat-expansion-panel-header>
      <p *ngFor="let book of library" >
-       Title: {{book.title}}, 
+       Title: {{book.title}},
        Author: {{book.author}}
+       Status: {{book.status}}
      </p>
    </mat-expansion-panel>
   </mat-accordion>
