@@ -1,6 +1,7 @@
-<mat-grid-list cols="3">
-  <mat-grid-tile *ngFor="let book of library">
-    <mat-card class = "cardPost">
+<div *ngFor="let book of library">
+<mat-grid-list cols="3" *ngIf="book.tag == 'Library'">
+  <mat-grid-tile>
+    <mat-card class = "cardPost" multi="true">
       <mat-card-header class="header">
         <mat-card-title class="title">
           {{book.title}}
@@ -11,13 +12,13 @@
           Author(s): {{book.author}}
         </p>
         <p>
-          Genre(s): [insert genre]
+          Genre(s): {{book.genre}}
         </p>
-        <p> <!-- put *ngIf for when series checkbox is true-->
-          Series: [insert series title]
+        <p *ngIf="book.series"> <!-- put *ngIf for when series checkbox is true-->
+          Series: {{book.seriesTitle}}
         </p>
         <p>
-          Reading Status: [insert reading status]
+          Reading Status: {{book.status}}
         </p>
         <mat-accordion multi="true">
           <mat-expansion-panel class="expansion">
@@ -27,7 +28,7 @@
               </p>
             </mat-expansion-panel-header>
             <p>
-              [insert notes content]
+              {{book.notes}}
             </p>
           </mat-expansion-panel>
          </mat-accordion>
@@ -35,4 +36,5 @@
      </mat-card>
   </mat-grid-tile>
 </mat-grid-list>
+</div>
 

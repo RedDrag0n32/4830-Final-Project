@@ -52,7 +52,7 @@ export class BodyAddBookComponent {
 
    onAddLibrary(form: NgForm){
     console.log(this.genres.value)
-    this.genreSelect.push(form.value.genre)
+    this.genreSelect.push(this.genres.value)
     this.service.AddLibrary(
       form.value.title,
       form.value.author,
