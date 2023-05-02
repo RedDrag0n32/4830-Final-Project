@@ -2,8 +2,9 @@
 .toolbar {
   position:fixed;
   left: 0px;
+  right: 0px;
   bottom: 0px;
-  background-color: #404041;
+  background-color: #801797;
 }
 
 /* all below displays names on bottom evenly */

@@ -27,7 +27,7 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatSelectModule} from '@angular/material/select';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatExpansionModule} from '@angular/material/expansion';
-
+import {MatGridListModule} from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
@@ -55,7 +55,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
     MatSelectModule,
     MatChipsModule,
     HttpClientModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

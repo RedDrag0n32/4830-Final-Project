@@ -1,19 +1,13 @@
-form {
+.bookForm {
   margin: auto;
   width: 50%;
-  height: 60%;
+  height: 65%;
   padding: 10px;
-  background-color: #f2f2f2;
+  background-color: #e1bee7;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
 }
-
-/* .formSection {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-} */
 
 h3 {
   margin: auto;
@@ -27,20 +21,43 @@ h3 {
   font-weight: 500;
 }
 
-input {
-  margin: auto;
-  width: 99%;
-}
-
 button {
-  margin: auto;
   width: 200px;
   font-size: large;
   font-weight: 500;
 }
 
+#formButton {
+  display: flex;
+  justify-content: center;
+}
 
+.formSection label, mat-checkbox {
+  display: inline-flex;
+  align-items: center;
+  width: 15%;
+  font-size: large;
+  font-weight: 400;
+}
 
+.genreSelect {
+  background-color: white;
+  height: 80px;
+  width: 79.5%;
+  border-radius: 5px;
+  padding: 5px;
+}
 
+.formSection input, .formSection textarea {
+  width: 80%;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+}
 
+.formSection textarea {
+  max-height: 80px;
+  overflow-y: scroll;
+  resize: none;
+}
 
