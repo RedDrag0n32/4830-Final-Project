@@ -1,40 +1,43 @@
-<div *ngFor="let book of library">
-<mat-grid-list cols="3" *ngIf="book.tag == 'Library'">
-  <mat-grid-tile>
-    <mat-card class = "cardPost" multi="true">
-      <mat-card-header class="header">
-        <mat-card-title class="title">
-          {{book.title}}
-        </mat-card-title>
-      </mat-card-header>
-      <mat-card-content class="content">
-        <p>
-          Author(s): {{book.author}}
-        </p>
-        <p>
-          Genre(s): {{book.genre}}
-        </p>
-        <p *ngIf="book.series"> <!-- put *ngIf for when series checkbox is true-->
-          Series: {{book.seriesTitle}}
-        </p>
-        <p>
-          Reading Status: {{book.status}}
-        </p>
-        <mat-accordion multi="true">
-          <mat-expansion-panel class="expansion">
-            <mat-expansion-panel-header>
+<!-- *ngIf="book.tag == 'Library'" -->
+<mat-grid-list cols="3">
+    <mat-grid-tile *ngFor="let book of library">
+      <mat-card class = "cardPost" multi="true">
+        <mat-card-header class="header">
+          <mat-card-title class="title">
+            {{book.title}}
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="content">
+          <p>
+            Author(s): {{book.author}} {{book.tag}}
+            <mat-divider></mat-divider>
+          </p>
+          <p>
+            Genre(s): {{book.genre}}
+            <mat-divider></mat-divider>
+          </p>
+          <p *ngIf="book.series"> <!-- put *ngIf for when series checkbox is true-->
+            Series: {{book.seriesTitle}}
+          <mat-divider></mat-divider>
+          </p>
+          <p>
+            Reading Status: {{book.status}}
+            <mat-divider></mat-divider>
+          </p>
+          <mat-accordion multi="true">
+            <mat-expansion-panel class="expansion">
+              <mat-expansion-panel-header>
+                <p>
+                  Notes
+                </p>
+              </mat-expansion-panel-header>
               <p>
-                Notes
+                {{book.notes}}
               </p>
-            </mat-expansion-panel-header>
-            <p>
-              {{book.notes}}
-            </p>
-          </mat-expansion-panel>
-         </mat-accordion>
-      </mat-card-content>
-     </mat-card>
-  </mat-grid-tile>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
 </mat-grid-list>
-</div>
 

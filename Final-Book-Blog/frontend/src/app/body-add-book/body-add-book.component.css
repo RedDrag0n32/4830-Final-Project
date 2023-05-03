@@ -6,7 +6,7 @@
   background-color: #e1bee7;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 h3 {
@@ -32,32 +32,37 @@ button {
   justify-content: center;
 }
 
-.formSection label, mat-checkbox {
-  display: inline-flex;
-  align-items: center;
-  width: 15%;
+/* .formSection{
+  border: 1px solid black;
+} */
+
+.formSection label {
+  /* border: 3px dotted red; */
   font-size: large;
   font-weight: 400;
 }
 
-.genreSelect {
-  background-color: white;
-  height: 80px;
-  width: 79.5%;
-  border-radius: 5px;
-  padding: 5px;
-}
-
 .formSection input, .formSection textarea {
-  width: 80%;
-  height: 40px;
+  width: 100%;
+  height: 100%;
   border: none;
   border-radius: 5px;
 }
 
 .formSection textarea {
   max-height: 80px;
-  overflow-y: scroll;
+  overflow-y: auto;
   resize: none;
+  padding-top: 10px;
 }
 
+.genreSelect {
+  background-color: white;
+  width: 99.5%;
+  height: 100%;
+  max-height: 40px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  border-radius: 5px;
+  padding: 5px;
+}
