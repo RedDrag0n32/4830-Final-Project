@@ -71,6 +71,11 @@ export class BodyAddBookComponent {
     if(!form.value.series){
       form.value.series = false
     }
+
+    if(!form.value.title){
+      alert("Title is required!")
+      return;
+    }
     this.service.AddLibrary(
       form.value.title,
       form.value.author,
