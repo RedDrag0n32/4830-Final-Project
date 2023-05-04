@@ -2,20 +2,22 @@
 <h3 mat-color="primary">Enter your Book Information</h3>
 <form class="bookForm" (submit)="onAddLibrary(bookForm)" #bookForm = "ngForm">
 
-  <div class="formSection" id="enterTitle">
-    <label>Title:</label>
-    <input name = "title" ngModel required #title = "ngModel">
-  </div>
+  <mat-form-field class="formSection" id="enterTitle">
+    <mat-label>Title</mat-label>
+    <input matInput name = "title" ngModel required #title = "ngModel">
+    <mat-error *ngIf="title.hasError('required')">Please enter a Title</mat-error>
+  </mat-form-field>
 
-  <div class="formSection" id="enterAuthor">
-    <label>Author:</label>
-    <input name = "author" ngModel required #author = "ngModel">
-  </div>
+  <mat-form-field class="formSection" id="enterAuthor">
+    <mat-label>Author:</mat-label>
+    <input matInput name = "author" ngModel required #author = "ngModel">
+    <mat-error *ngIf="author.hasError('required')">Please enter an Author</mat-error>
+  </mat-form-field>
 
-  <div class="formSection" id="enterGenres">
-    <label class="genreLabel">Genre(s):</label>
+  <mat-form-field class="formSection" id="enterGenres">
+    <mat-label class="genreLabel">Genre(s):</mat-label>
     <!-- drop down selection -->
-    <mat-select class="genreSelect" [formControl]="genres" multiple selectable>
+    <mat-select class="genreSelect" required [formControl]="genres" multiple selectable>
       <mat-select-trigger>
 
         <!-- displays selections as chips -->
@@ -28,36 +30,37 @@
       </mat-select-trigger>
       <mat-option *ngFor="let genre of genreList" [value]="genre">{{genre}}</mat-option>
     </mat-select>
-  </div>
+    <mat-error *ngIf="genres.hasError('required')">Please choose a genre</mat-error>
+  </mat-form-field>
 
   <div class="formSection" id="checkSeries">
     <label>Series:</label>
-    <mat-checkbox color="accent" name = "series" ngModel required #series = "ngModel"></mat-checkbox>
+    <mat-checkbox color="accent" name = "series" ngModel #series = "ngModel"></mat-checkbox>
   </div>
 
-  <div class="formSection" id="seriesTitle">
-    <label>Series Title (Optional):</label>
-    <input name = "seriesTitle" ngModel required #seriesTitle = "ngModel">
-  </div>
+  <mat-form-field class="formSection" id="seriesTitle">
+    <mat-label>Series Title (Optional):</mat-label>
+    <input matInput name = "seriesTitle" ngModel #seriesTitle = "ngModel">
+  </mat-form-field>
 
   <div class="formSection" id="radioStatus">
     <label>Reading Status:</label>
     <mat-radio-group name = "status" ngModel required #status = "ngModel">
-      <mat-radio-button value="Unread">Unread</mat-radio-button>
+      <mat-radio-button value="Unread" selected:T>Unread</mat-radio-button>
       <mat-radio-button value="InProgress">In Progress</mat-radio-button>
       <mat-radio-button value="Read">Read</mat-radio-button>
     </mat-radio-group>
   </div>
 
-  <div class="formSection" id="enterNotes">
-    <label class="notesLabel">Notes:</label>
-    <textarea name = "notes" ngModel required #notes = "ngModel"></textarea>
-  </div>
+  <mat-form-field class="formSection" id="enterNotes">
+    <mat-label class="notesLabel">Notes:</mat-label>
+    <textarea matInput name = "notes" ngModel #notes = "ngModel"></textarea>
+  </mat-form-field>
 
   <div class="formSection" id="radioWhichPage">
     <label>Add to:</label>
     <mat-radio-group name = "tag" ngModel required #tag = "ngModel">
-      <mat-radio-button value = "Library">Library</mat-radio-button>
+      <mat-radio-button value = "Library" selected:T>Library</mat-radio-button>
       <mat-radio-button value = "WishList">Wish List</mat-radio-button>
     </mat-radio-group>
   </div>

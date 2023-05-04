@@ -53,8 +53,8 @@ export class BodyAddBookComponent {
    onAddLibrary(form: NgForm){
     console.log(this.genres.value)
     this.genreSelect.push(this.genres.value)
-    if(!form.value.title){
-      console.log("No title entered")
+    if (form.invalid) {
+      return;
     }
     this.service.AddLibrary(
       form.value.title,
