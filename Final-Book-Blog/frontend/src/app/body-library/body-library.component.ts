@@ -22,7 +22,12 @@ export class BodyLibraryComponent implements OnInit {
   ngOnInit(){
     this.service.getLibrary();
     this.librarySub = this.service.getLibraryUpdateListener().subscribe((books: Book[]) =>{
-      this.library = books;
+      books.forEach((element) => {
+        if(element.tag == "Library") {
+          this.library.push(element)
+        }
+      })
+      //this.library = books;
     })
   }
 
