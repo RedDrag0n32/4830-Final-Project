@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { BookServiceService } from '../book-service.service';
 import { Book } from '../book.model';
 import {FormControl} from '@angular/forms';
 import {MatChipEditedEvent, MatChipInputEvent} from '@angular/material/chips';
+import { FormBuilder, Validators } from "@angular/forms";
 
 @Component({
   selector: 'app-body-add-book',
@@ -13,7 +14,7 @@ import {MatChipEditedEvent, MatChipInputEvent} from '@angular/material/chips';
 export class BodyAddBookComponent {
 
 
-  constructor(public service: BookServiceService) {
+  constructor(public service: BookServiceService, public fb: FormBuilder) {
 
    }
 
@@ -50,11 +51,25 @@ export class BodyAddBookComponent {
 
   //public book: Book[]
 
+  bookForm: any;
+  status: string
+
+  ngOnInit(){
+    // this.bookForm = this.fb.group({
+    //   status: ['Unread', [Validators.required]]
+    // })
+      this.status = "Unread"
+
+  }
+
    onAddLibrary(form: NgForm){
     console.log(this.genres.value)
     this.genreSelect.push(this.genres.value)
     if (form.invalid) {
       return;
+    }
+    if(!form.value.series){
+      form.value.series = false
     }
     this.service.AddLibrary(
       form.value.title,
@@ -66,6 +81,7 @@ export class BodyAddBookComponent {
       form.value.notes,
       form.value.tag
       )
+      console.log(form.value.status)
     form.resetForm()
    }
 
