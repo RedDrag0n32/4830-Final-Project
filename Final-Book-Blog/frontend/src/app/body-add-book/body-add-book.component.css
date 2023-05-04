@@ -37,3 +37,17 @@ button {
   overflow-x: hidden;
   overflow-y: auto;
 }
+
+.radio {
+  display: flex;
+  padding-bottom: 2%;
+}
+
+.option {
+  margin-top: -1%;
+}
+
+.radioError {
+  font-size: small;
+  margin-top: -3%;
+}

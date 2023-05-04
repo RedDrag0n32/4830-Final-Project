@@ -43,13 +43,12 @@
     <input matInput name = "seriesTitle" ngModel #seriesTitle = "ngModel">
   </mat-form-field>
 
-  <div class="formSection" class="radio">
-    <label>Reading Status (required):</label>
-    <mat-radio-group name = "status" ngModel required #status = "ngModel">
-      <mat-radio-button value="Unread">Unread</mat-radio-button>
-      <mat-radio-button value="InProgress">In Progress</mat-radio-button>
-      <mat-radio-button value="Read">Read</mat-radio-button>
-      <mat-error *ngIf="status.hasError('required')"></mat-error>
+  <div class="formSection">
+    <mat-radio-group class="radio" name = "status" ngModel required #status = "ngModel">
+      <label>Reading Status (required): <mat-error class="radioError" *ngIf="status.hasError('required') ">*Required Field</mat-error></label>
+      <mat-radio-button class="option" value="Unread">Unread</mat-radio-button>
+      <mat-radio-button class="option" value="InProgress">In Progress</mat-radio-button>
+      <mat-radio-button class="option" value="Read">Read</mat-radio-button>
     </mat-radio-group>
   </div>
 
@@ -58,12 +57,11 @@
     <textarea matInput name = "notes" ngModel #notes = "ngModel"></textarea>
   </mat-form-field>
 
-  <div class="formSection" id="radioWhichPage">
-    <label>Add to (required):</label>
-    <mat-radio-group name = "tag" ngModel required #tag = "ngModel">
-      <mat-radio-button value = "Library">Library</mat-radio-button>
-      <mat-radio-button value = "WishList">Wish List</mat-radio-button>
-      <mat-error *ngIf="tag.hasError('required')"></mat-error>
+  <div class="formSection">
+    <mat-radio-group class="radio" name = "tag" ngModel required #tag = "ngModel">
+      <label>Add to (required): <mat-error class="radioError" *ngIf="tag.hasError('required')">*Required Field</mat-error></label>
+      <mat-radio-button class="option" value = "Library">Library</mat-radio-button>
+      <mat-radio-button class="option" value = "WishList">Wish List</mat-radio-button>
     </mat-radio-group>
   </div>
 
