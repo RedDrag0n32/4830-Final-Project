@@ -9,26 +9,25 @@
         </mat-card-header>
         <mat-card-content class="content">
           <div class="section">
-            <p>Author(s): <br></p>
+            <p class="label">Author(s):</p>
             <p>{{book.author}}</p>
           </div>
           <mat-divider></mat-divider>
-          <!-- <p>
-            Author(s): {{book.author}} {{book.tag}}
-            <mat-divider></mat-divider>
-          </p> -->
-          <p>
-            Genre(s): {{book.genre}}
-            <mat-divider></mat-divider>
-          </p>
-          <p *ngIf="book.series"> <!-- put *ngIf for when series checkbox is true-->
-            Series: {{book.seriesTitle}}
+          <div class="section">
+            <p class="label">Genre(s):</p>
+            <p>{{book.genre}}</p>
+          </div>
           <mat-divider></mat-divider>
-          </p>
-          <p>
-            Reading Status: {{book.status}}
-            <mat-divider></mat-divider>
-          </p>
+          <div class="section" *ngIf="book.series">
+            <p class="label">Series:</p>
+            <p>{{book.seriesTitle}}</p>
+          </div>
+          <mat-divider *ngIf="book.series"></mat-divider>
+          <div class="section">
+            <p class="label">Reading Status:</p>
+            <p>{{book.status}}</p>
+          </div>
+          <mat-divider></mat-divider>
           <mat-accordion multi="true">
             <mat-expansion-panel class="expansion">
               <mat-expansion-panel-header>
