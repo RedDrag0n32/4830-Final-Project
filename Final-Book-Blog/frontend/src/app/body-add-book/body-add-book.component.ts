@@ -42,6 +42,7 @@ export class BodyAddBookComponent {
     "History",
     "Historical Fiction",
     "Horror",
+    "Fantasy",
     "Mystery",
     "Paranormal",
     "Poetry",
@@ -70,17 +71,23 @@ export class BodyAddBookComponent {
   }
 
    onAddLibrary(form: NgForm){
-    console.log(this.genres.value)
-    this.genreSelect.push(this.genres.value)
+    //this.genreSelect.push(this.genres.value)
     if (form.invalid) {
       return;
     }
-    if(!form.hasError){
-      this.clicked = 0;
-    }
+    // if(!form.hasError){
+    //   this.clicked = 0;
+    // }
     if(!form.value.series){
       form.value.series = false;
     }
+    // if(this.clicked > 0){
+    //   console.log("printed")
+    //   return;
+    // }
+
+    this.genreSelect.push(this.genres.value)
+    console.log(this.genres.value)
     this.service.AddLibrary(
       form.value.title,
       form.value.author,
@@ -93,7 +100,9 @@ export class BodyAddBookComponent {
       )
       console.log(form.value.status)
     form.resetForm()
-    
+    this.clicked = 0;
+    this.genres.reset()
+
    }
 
 }
