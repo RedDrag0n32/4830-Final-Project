@@ -51,3 +51,7 @@ button {
   font-size: small;
   margin-top: -3%;
 }
+
+.formSection textarea {
+  resize: none;
+}
