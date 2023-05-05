@@ -69,12 +69,7 @@ export class BodyAddBookComponent {
       return;
     }
     if(!form.value.series){
-      form.value.series = false
-    }
-
-    if(!form.value.title){
-      alert("Title is required!")
-      return;
+      form.value.series = false;
     }
     this.service.AddLibrary(
       form.value.title,
@@ -88,6 +83,7 @@ export class BodyAddBookComponent {
       )
       console.log(form.value.status)
     form.resetForm()
+    
    }
 
 }
