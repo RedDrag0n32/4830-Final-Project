@@ -45,7 +45,7 @@
 
   <div class="formSection">
     <mat-radio-group class="radio" name = "status" ngModel required #status = "ngModel">
-      <label>Reading Status (required): <mat-error class="radioError" *ngIf="status.hasError('required') ">*Required Field</mat-error></label>
+      <label>Reading Status:* <mat-error class="radioError" *ngIf="status.hasError('required') && clicked > 0 ">Required</mat-error></label>
       <mat-radio-button class="option" value="Unread">Unread</mat-radio-button>
       <mat-radio-button class="option" value="InProgress">In Progress</mat-radio-button>
       <mat-radio-button class="option" value="Read">Read</mat-radio-button>
@@ -59,13 +59,13 @@
 
   <div class="formSection">
     <mat-radio-group class="radio" name = "tag" ngModel required #tag = "ngModel">
-      <label>Add to (required): <mat-error class="radioError" *ngIf="tag.hasError('required')">*Required Field</mat-error></label>
+      <label>Add to:* <mat-error class="radioError" *ngIf="tag.hasError('required') && clicked > 0">Required</mat-error></label>
       <mat-radio-button class="option" value = "Library">Library</mat-radio-button>
       <mat-radio-button class="option" value = "WishList">Wish List</mat-radio-button>
     </mat-radio-group>
   </div>
 
   <div class="formSection" id="formButton">
-    <button type = "submit" mat-raised-button color="primary" class="formButton">Add Book</button>
+    <button (click)="onFailClick()" type = "submit" mat-raised-button color="primary" class="formButton">Add Book</button>
   </div>
 </form>

@@ -18,6 +18,13 @@ export class BodyAddBookComponent {
 
    }
 
+  //Button clicked trigger variable
+  clicked = 0;
+
+  onFailClick(){
+    this.clicked = this.clicked + 1;
+  }
+
   //Genres array, lists out genres within the forms
    genres = new FormControl();
    genreList: string[] = [
@@ -67,6 +74,9 @@ export class BodyAddBookComponent {
     this.genreSelect.push(this.genres.value)
     if (form.invalid) {
       return;
+    }
+    if(!form.hasError){
+      this.clicked = 0;
     }
     if(!form.value.series){
       form.value.series = false;
