@@ -7,24 +7,24 @@
         </mat-card-title>
       </mat-card-header>
       <mat-card-content class="content">
-        <div class="section">
+        <div class="section" id="author">
           <p class="label">Author(s):</p>
-          <p>{{book.author}}</p>
+          <p class="overflow">{{book.author}}</p>
         </div>
         <mat-divider></mat-divider>
-        <div class="section">
+        <div class="section" id="genre">
           <p class="label">Genre(s):</p>
-          <p>{{book.genre}}</p>
+          <p class="overflow">{{book.genre}}</p>
         </div>
         <mat-divider></mat-divider>
-        <div class="section" *ngIf="book.series">
+        <div class="section" id="series" *ngIf="book.series">
           <p class="label">Series:</p>
-          <p>{{book.seriesTitle}}</p>
+          <p class="overflow">{{book.seriesTitle}}</p>
         </div>
         <mat-divider *ngIf="book.series"></mat-divider>
-        <div class="section">
+        <div class="section" id="status">
           <p class="label">Reading Status:</p>
-          <p>{{book.status}}</p>
+          <p class="overflow">{{book.status}}</p>
         </div>
         <mat-divider></mat-divider>
         <mat-accordion multi="true">

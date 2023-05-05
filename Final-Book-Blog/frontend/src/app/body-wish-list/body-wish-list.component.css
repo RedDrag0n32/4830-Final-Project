@@ -43,3 +43,17 @@
   padding-right: 2%;
   font-weight: 500;
 }
+
+.content #author, .content #genre, .content #series, .content #status {
+  max-height: 50px;
+}
+
+.section p {
+  margin-top: 10px;
+}
+
+.overflow {
+  max-width: 80%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}

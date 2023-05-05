@@ -1,47 +1,46 @@
-<!-- *ngIf="book.tag == 'Library'" -->
 <mat-grid-list cols="3">
-    <mat-grid-tile *ngFor="let book of library">
-      <mat-card class = "cardPost" multi="true">
-        <mat-card-header class="header">
-          <mat-card-title class="title">
-            {{book.title}}
-          </mat-card-title>
-        </mat-card-header>
-        <mat-card-content class="content">
-          <div class="section">
-            <p class="label">Author(s):</p>
-            <p>{{book.author}}</p>
-          </div>
-          <mat-divider></mat-divider>
-          <div class="section">
-            <p class="label">Genre(s):</p>
-            <p>{{book.genre}}</p>
-          </div>
-          <mat-divider></mat-divider>
-          <div class="section" *ngIf="book.series">
-            <p class="label">Series:</p>
-            <p>{{book.seriesTitle}}</p>
-          </div>
-          <mat-divider *ngIf="book.series"></mat-divider>
-          <div class="section">
-            <p class="label">Reading Status:</p>
-            <p>{{book.status}}</p>
-          </div>
-          <mat-divider></mat-divider>
-          <mat-accordion multi="true">
-            <mat-expansion-panel class="expansion">
-              <mat-expansion-panel-header>
-                <p>
-                  Notes
-                </p>
-              </mat-expansion-panel-header>
+  <mat-grid-tile *ngFor="let book of library">
+    <mat-card class = "cardPost" multi="true">
+      <mat-card-header class="header">
+        <mat-card-title class="title">
+          {{book.title}}
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="content">
+        <div class="section" id="author">
+          <p class="label">Author(s):</p>
+          <p class="overflow">{{book.author}}</p>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="section" id="genre">
+          <p class="label">Genre(s):</p>
+          <p class="overflow">{{book.genre}}</p>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="section" id="series" *ngIf="book.series">
+          <p class="label">Series:</p>
+          <p class="overflow">{{book.seriesTitle}}</p>
+        </div>
+        <mat-divider *ngIf="book.series"></mat-divider>
+        <div class="section" id="status">
+          <p class="label">Reading Status:</p>
+          <p class="overflow">{{book.status}}</p>
+        </div>
+        <mat-divider></mat-divider>
+        <mat-accordion multi="true">
+          <mat-expansion-panel class="expansion">
+            <mat-expansion-panel-header>
               <p>
-                {{book.notes}}
+                Notes
               </p>
-            </mat-expansion-panel>
-          </mat-accordion>
-        </mat-card-content>
-      </mat-card>
-    </mat-grid-tile>
+            </mat-expansion-panel-header>
+            <p>
+              {{book.notes}}
+            </p>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
 </mat-grid-list>
 
